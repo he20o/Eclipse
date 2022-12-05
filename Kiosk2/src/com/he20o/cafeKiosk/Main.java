@@ -6,26 +6,29 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<Product>basket = new ArrayList<Product>();
-		
+		ArrayList<Product> basket = new ArrayList<Product>();
+
 		System.out.println("===================================");
 		System.out.println("=============🏝️CAFE🏝️==============");
 		System.out.println("===================================");
 		System.out.println("");
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		Product p1 = new Product("아이스아메리카노",3500);
-		Product p2 = new Product("핫 아메리카노",3000);
-		Product p3 = new Product("오렌지쥬스",5000);
-		Product p4 = new Product("마카롱",2500);
-		Product p5 = new Product("스콘",3000);
-		Product p6 = new Product("붕어빵",2000);
-		
+
+		Product p1 = new Product("아이스아메리카노", 3500);
+		Product p2 = new Product("핫 아메리카노", 3000);
+		Product p3 = new Product("오렌지쥬스", 5000);
+		Product p4 = new Product("마카롱", 2500);
+		Product p5 = new Product("스콘", 3000);
+		Product p6 = new Product("붕어빵", 2000);
+		Product p7 = new Product("초코아이스크림", 3000);
+		Product p8 = new Product("딸기아이스크림", 3000);
+		Product p9 = new Product("체리아이스크림", 3000);
+
 		String cmd;
 
 		xx: while (true) {
-			System.out.print("주문하기[1.음료선택/2.디저트선택/e.주문완료]");
+			System.out.print("주문하기[1.음료선택/2.디저트선택/3.아이스크림선택/e.주문완료]");
 			cmd = sc.next();
 			switch (cmd) {
 			case "1":
@@ -40,35 +43,34 @@ public class Main {
 				System.out.println("1.아아/2.뜨아/3.오렌지쥬스/x.이전메뉴로");
 				System.out.println("");
 				yy: while (true) {
-					
+
 					cmd = sc.next();
-					switch(cmd) {
-					case "1" :
+					switch (cmd) {
+					case "1":
 						System.out.println("아이스아메리카노");
-						Product x = new Product("아이스아메리카노",3500);
+						Product x = new Product("아이스아메리카노", 3500);
 						basket.add(x);
 						break;
-						
-					case "2" :
+
+					case "2":
 						System.out.println("핫 아메리카노");
-						Product y = new Product("핫 아메리카노",3000);
+						Product y = new Product("핫 아메리카노", 3000);
 						basket.add(y);
 						break;
-						
-					case "3" :
+
+					case "3":
 						System.out.println("오렌지쥬스");
-						Product z = new Product("오렌지쥬스",5000);
+						Product z = new Product("오렌지쥬스", 5000);
 						basket.add(z);
 						break;
-						
-					case "x" :
+
+					case "x":
 						System.out.println("이전 화면으로 이동");
 						break yy;
 					}
-					
-				}break;
 
-			
+				}
+				break;
 
 			case "2":
 				System.out.println("===================================");
@@ -81,54 +83,90 @@ public class Main {
 				System.out.println("");
 				System.out.println("1.마카롱/2.스콘/3.붕어빵/x.이전메뉴로");
 				System.out.println("");
-				zz:while(true) {
+				zz: while (true) {
 					cmd = sc.next();
-					switch(cmd) {
-					case "1" :
+					switch (cmd) {
+					case "1":
 						System.out.println("마카롱");
-						Product a = new Product("마카롱",2500);
+						Product a = new Product("마카롱", 2500);
 						basket.add(a);
 						break;
-					case "2" :
+					case "2":
 						System.out.println("스콘");
-						Product b = new Product("스콘",3000);
+						Product b = new Product("스콘", 3000);
 						basket.add(b);
 						break;
-					case "3" :
+					case "3":
 						System.out.println("붕어빵");
-						Product c = new Product("붕어빵",2000);
+						Product c = new Product("붕어빵", 2000);
 						basket.add(c);
 						break;
-					case "x" :
+					case "x":
 						System.out.println("이전 화면으로 이동");
 						break zz;
 					}
-					
-				}break;
-				
+
+				}
+				break;
+
+			case "3":
+				System.out.println("===================================");
+				System.out.println("===========🍧ICECREAM🍧============");
+				System.out.println("===================================");
+				System.out.println("");
+				p7.info();
+				p8.info();
+				p9.info();
+				System.out.println("");
+				System.out.println("1.초코맛아이스크림/2.딸기맛아이스크림/3.체리맛아이스크림/x.이전메뉴로");
+				System.out.println("");
+
+				vv: while (true) {
+					cmd = sc.next();
+					switch (cmd) {
+					case "1":
+						System.out.println("초코맛아이스크림");
+						Product d = new Product("초코맛아이스크림", 3000);
+						basket.add(d);
+						break;
+					case "2":
+						System.out.println("딸기맛아이스크림");
+						Product e = new Product("초코맛아이스크림", 3000);
+						basket.add(e);
+						break;
+					case "3":
+						System.out.println("체리맛아이스크림");
+						Product f = new Product("초코맛아이스크림", 3000);
+						basket.add(f);
+						break;
+					case "x":
+						System.out.println("이전 화면으로 이동");
+						break vv;
+
+					}
+				}
 
 			case "e":
 				System.out.println("");
 				System.out.println("🙌잠시만 기다려주세요🙌");
 				System.out.println("");
-				
+
 				break xx;
 
 			}
-			
+
 		}
 		int count = basket.size();
-		System.out.println("장바구니에 담긴 상품 갯수:"+count);
-		
+		System.out.println("장바구니에 담긴 상품 갯수:" + count);
+
 		int sum = 0;
-		for(int i=0;i<basket.size();i=i+1) {
+		for (int i = 0; i < basket.size(); i = i + 1) {
 			sum = sum + basket.get(i).price;
 		}
-		
-		System.out.println("총 주문금액은 "+ sum +"원 입니다.");
+
+		System.out.println("총 주문금액은 " + sum + "원 입니다.");
 
 		sc.close();
 	}
 
 }
-

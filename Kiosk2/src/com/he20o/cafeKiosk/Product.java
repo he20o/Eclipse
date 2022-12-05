@@ -11,6 +11,6 @@ public class Product {
 	}
 
 	void info() {
-		System.out.println("❤️:"+name+"//💰:"+price);
+		System.out.println("❤️:" + name + "//💰:" + price);
 	}
 }
